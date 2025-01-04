@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavesh_vsv8206</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2E3135, #2a5298); /* Blue Gradient */
+    color: #fff; /* Text color white */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color :   #735DA5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px;
+    flex: 1;
+}
+
+.box {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Removes underline from links */
+}
+
+/* Different colors for each box */
+.profile {
+    background-color: #e776c9; /* Blue */
+}
+
+.projects {
+    background-color: #ef8383; /* Red */
+}
+
+.about {
+    background-color: #78e776; /* Green */
+}
+
+.contact {
+    background-color: #e8ef83; /* Yellow */
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+    </style>
+    
+</head>
+<body>
+    <header class="header">
+        <h3>Bhavesh_vsv8206</h3>
+    </header>
+    
+    <main class="main-container">
+        <a href="profile.html" class="box profile"> 👤 PROFILE </a>
+        <a href="projects.html" class="box projects">🚀 PROJECTS</a>
+        <a href="about.html" class="box about"> 🧑‍💻 ABOUT </a>
+        <a href="contact.html" class="box contact">💌 CONTACT ME</a>
+    </main>
+    <footer class="footer">
+        <p>© Bhavesh_vsv8206. Designed With ❤️</p>
+    </footer>
+</body>
+</html>

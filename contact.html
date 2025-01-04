@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Line Spacing Example</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2E3135, #2a5298); /* Blue Gradient */
+    color: #fff; /* Text color white */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+  
+    background-color :   #735DA5;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Section: Contact */
+#contact .container {
+  margin-top:50%;
+  margin-left: 10%;
+  margin-bottom:50%;
+  
+  text-align: center;
+  
+  width: 80%; /* or your desired width */
+  
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact form input, 
+#contact form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#contact form button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#contact form button:hover {
+  background: #0056b3;
+}
+
+
+.footer {
+  position: fixed;
+  margin-bottom: 0;
+  bottom: 0;
+  width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h3>Bhavesh_vsv8206</h3>
+    </header>
+    
+    <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="https://api.web3forms.com/submit" method="post" id="contact-form">
+       <input type="hidden" name="access_key" value="28bc81c3-03c7-45f4-9d74-9a08f3525ae4">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+<footer class="footer">
+        <p>© Bhavesh_vsv8206. Designed With ❤️</p>
+    </footer>
+</body>
+</html>
