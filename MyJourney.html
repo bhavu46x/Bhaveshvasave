@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Days and Graduation Albums</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .album {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .slide p {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+      padding: 10px 15px;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    button.prev {
+      left: 10px;
+    }
+
+    button.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>School Days and Graduation Albums</h1>
+
+  <!-- School Days Album -->
+  <div class="album">
+    <h2>School Days</h2>
+    <div class="slider-container">
+      <button class="prev" onclick="moveSlide('school', -1)">&#10094;</button>
+      <div class="slides" id="school">
+        <div class="slide" style="background-image: url('school1.jpg');">
+          <p>School Days Photo 1</p>
+        </div>
+        <div class="slide" style="background-image: url('school2.jpg');">
+          <p>School Days Photo 2</p>
+        </div>
+        <div class="slide" style="background-image: url('school3.jpg');">
+          <p>School Days Photo 3</p>
+        </div>
+        <div class="slide" style="background-image: url('school4.jpg');">
+          <p>School Days Photo 4</p>
+        </div>
+        <div class="slide" style="background-image: url('school5.jpg');">
+          <p>School Days Photo 5</p>
+        </div>
+        <div class="slide" style="background-image: url('school6.jpg');">
+          <p>School Days Photo 6</p>
+        </div>
+        <div class="slide" style="background-image: url('school7.jpg');">
+          <p>School Days Photo 7</p>
+        </div>
+        <div class="slide" style="background-image: url('school8.jpg');">
+          <p>School Days Photo 8</p>
+        </div>
+        <div class="slide" style="background-image: url('school9.jpg');">
+          <p>School Days Photo 9</p>
+        </div>
+        <div class="slide" style="background-image: url('school10.jpg');">
+          <p>School Days Photo 10</p>
+        </div>
+      </div>
+      <button class="next" onclick="moveSlide('school', 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Graduation Album -->
+  <div class="album">
+    <h2>Graduation</h2>
+    <div class="slider-container">
+      <button class="prev" onclick="moveSlide('graduation', -1)">&#10094;</button>
+      <div class="slides" id="graduation">
+        <div class="slide" style="background-image: url('graduation/graduation1.jpg');">
+          <p>Graduation Photo 1</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation2.jpg');">
+          <p>Graduation Photo 2</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation3.jpg');">
+          <p>Graduation Photo 3</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation4.jpg');">
+          <p>Graduation Photo 4</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation5.jpg');">
+          <p>Graduation Photo 5</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation6.jpg');">
+          <p>Graduation Photo 6</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation7.jpg');">
+          <p>Graduation Photo 7</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation8.jpg');">
+          <p>Graduation Photo 8</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation9.jpg');">
+          <p>Graduation Photo 9</p>
+        </div>
+        <div class="slide" style="background-image: url('graduation/graduation10.jpg');">
+          <p>Graduation Photo 10</p>
+        </div>
+      </div>
+      <button class="next" onclick="moveSlide('graduation', 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    const slideIndices = {
+      school: 0,
+      graduation: 0,
+    };
+
+    function moveSlide(album, direction) {
+      const slidesContainer = document.getElementById(album);
+      const slides = slidesContainer.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+
+      slideIndices[album] += direction;
+
+      if (slideIndices[album] < 0) {
+        slideIndices[album] = totalSlides - 1;
+      } else if (slideIndices[album] >= totalSlides) {
+        slideIndices[album] = 0;
+      }
+
+      const offset = -slideIndices[album] * 100;
+      slidesContainer.style.transform = `translateX(${offset}%)`;
+    }
+  </script>
+</body>
+</html>
